@@ -50,8 +50,10 @@ def newton(left, right, eps, iteration, function_number):
             if abs(xi - xim1) < eps:
                 print("Newton - " + str(counter) + " iteracji")
                 return xi
+            xim1 = xi
             xi = xi - float(fxi / dfx)
             counter += 1
+
     else:
         for n in range(iteration):
             fxi = funtions_value(xi, function_number)

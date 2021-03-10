@@ -1,4 +1,5 @@
 from functions import funtions_value
+from functions import funtions_pattern
 from methods import bisection
 from methods import newton
 from plots import show_plot
@@ -69,14 +70,16 @@ while True:
         accuracy = -1
 
     result_bisection = bisection(left, right, accuracy, iteration, function_number)
-    # result_newton = newton(left, right, accuracy, iteration, function_number)
+    result_newton = newton(left, right, accuracy, iteration, function_number)
 
     if result_bisection is False:
         print("Bisekcja: Funkcja nie spełnia założeń na danym przedziale")
-    # elif result_newton is False:
-    #     print("Newton: Funkcja nie spełnia założeń na danym przedziale")
     else:
-        # show_plot(left, right, function_number, result_newton, "Metoda bisekcji")
-        # print(result_newton)
         print(result_bisection)
 
+    if result_newton is False:
+        print("Newton: Funkcja nie spełnia założeń na danym przedziale")
+    else:
+        print(result_newton)
+
+    show_plot(left, right, function_number, result_bisection, result_newton)
