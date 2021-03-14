@@ -75,11 +75,11 @@ while True:
     if result_bisection is False:
         print("Bisekcja: Funkcja nie spełnia założeń na danym przedziale")
     else:
-        print(result_bisection)
+        print("Bisekcja - " + str(result_bisection))
 
     if result_newton is False:
         print("Newton: Funkcja nie spełnia założeń na danym przedziale")
     else:
-        print(result_newton)
+        print("Newton - " + str(result_newton))
 
     show_plot(left, right, function_number, result_bisection, result_newton)

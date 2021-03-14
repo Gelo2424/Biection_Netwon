@@ -24,7 +24,6 @@ def funtions_value(x, function_number):
 def funtions_pattern(function_number):
     x = sp.Symbol('x')
     if function_number == 1:
-        # pattern = horner([5, 2, -1, -1], x)
         pattern = 5 * sp.Pow(x, 3) + 2 * sp.Pow(x, 2) - 1 * x - 1
     elif function_number == 2:
         pattern = 2 * sp.sin(x) + 2 * sp.cos(x)

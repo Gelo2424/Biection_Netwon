@@ -22,17 +22,19 @@ def bisection(left, right, eps, iteration, function_number):
                 counter += 1
                 xim1 = xi
         else:
-            xi = (left + right) / 2
+            xi = 0
             for n in range(iteration):
+                xi = (left + right) / 2
                 if funtions_value(xi, function_number) == 0.0:
+                    print("Bisekcja - znaleziono rozwiazanie po " + str(n + 1) + " iteracjach")
                     return xi
                 elif funtions_value(xi, function_number) * funtions_value(left, function_number) < 0:
                     right = xi
                 else:
                     left = xi
-            counter = iteration
-            # eps = abs(funtions_value(xi, function_number))
-    return xi
+            eps = abs(funtions_value(xi, function_number))
+            print("Bisekcja - znaleziono rozwiazanie po " + str(iteration) + " iteracjach z dokladnoscia " + str(eps))
+            return xi
 
 
 def newton(left, right, eps, iteration, function_number):
@@ -59,7 +61,12 @@ def newton(left, right, eps, iteration, function_number):
             fxi = funtions_value(xi, function_number)
             dfx = df.subs(x, xi)
             xi = xi - float(fxi / dfx)
-        counter = iteration
-        # eps = abs(funtions_value(xi, function_number))
+            if funtions_value(xi, function_number) == 0.0:
+                print("Netwon - znaleziono rozwiazanie po " + str(n + 1) + " iteracjach")
+                return xi
+
+        eps = abs(funtions_value(xi, function_number))
+        print(eps)
+        print("Newton - znaleziono rozwiazanie po " + str(iteration) + " iteracjach z dokladnoscia " + str(eps))
 
     return xi
