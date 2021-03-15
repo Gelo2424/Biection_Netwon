@@ -2,12 +2,12 @@ import numpy as np
 import sympy as sp
 
 
+#  funckja zwracająca wartość podanej funkcji dla danego argumentu x
 def funtions_value(x, function_number):
     # function_number = 1 -> 5x^3 + 2x^2 - 1x - 1
     # function_number = 2 -> 2sin(x) + 2cos(x)
     # function_number = 3 -> 2^x + 3^x - 5
     # function_number = 4 -> 2x^2 + 2^x + 2sin(x) - 2
-
     if function_number == 1:
         value = horner([5, 2, -1, -1], x)
     elif function_number == 2:
@@ -21,6 +21,7 @@ def funtions_value(x, function_number):
     return value
 
 
+#  funckja zwracająca wzór podanej funkcji
 def funtions_pattern(function_number):
     x = sp.Symbol('x')
     if function_number == 1:
@@ -35,7 +36,7 @@ def funtions_pattern(function_number):
         pattern = None
     return pattern
 
-
+#
 def horner(factors, x):
     result = factors[0]
     for a in range(1, len(factors)):
