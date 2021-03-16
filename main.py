@@ -13,7 +13,7 @@ while True:
     function_number = 0  # numer wybranej funkcji
     while correct is not True:
         print("""\nWybierz numer funkcji:
-        1 - wielomianowa: 5x^3 + 2x^2 - 1x - 1
+        1 - wielomianowa: x^3 + 2x^2 - 1x + 1
         2 - trygonometryczna: 2sin(x) + 2cos(x)
         3 - wykładnicza: 2^x + 3^x - 5
         4 - złożona: 2x^2 + 2^x + 2sin(x) - 2""")
