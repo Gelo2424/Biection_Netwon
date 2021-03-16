@@ -50,7 +50,7 @@ def newton(left, right, eps, iteration, function_number):
         return False
     xi = (left + right) / 2
     if eps != -1:
-        xim1 = (left + right) / 2 - 100  # ???
+        xim1 = (left + right) / 2 - 100
         while True:
             fxi = funtions_value(xi, function_number)
             dfx = df.subs(x, xi)

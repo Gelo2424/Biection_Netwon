@@ -16,7 +16,7 @@ while True:
         1 - wielomianowa: x^3 + 2x^2 - 1x + 1
         2 - trygonometryczna: 2sin(x) + 2cos(x)
         3 - wykładnicza: 2^x + 3^x - 5
-        4 - złożona: 2x^2 + 2^x + 2sin(x) - 2""")
+        4 - złożona: 2x^2 + 2^x + 2sin(x) - 20""")
         try:
             function_number = int(input())
             if 0 < function_number < 5:
