@@ -5,13 +5,17 @@ import sympy as sp
 
 # metoda bisekcji, przyjmuje lewy i prawy kraniec przedziału, dokładność, liczbe iteracji i numer funkcji
 def bisection(left, right, eps, iteration, function_number):
-    counter = 0  # licznik pętli
+    counter = 1  # licznik pętli
     # założenie, jeżeli na krańcach przedziału są te same znaki to nie możemy korzystać z metody bisekcji
     if funtions_value(left, function_number) * funtions_value(right, function_number) > 0:
         return False
     else:
         if eps != -1:  # jeżeli eps nie jest -1 to używamy go jako warunek stopu
-            xim1 = (left + right) / 2 - 100  # xi - 1
+            xi = (left + right) / 2
+            xim1 = xi + 100
+            if funtions_value(xi, function_number) == 0.0:
+                print("Bisekcja - " + str(counter) + " iteracji")
+                return xi
             while True:
                 xi = (left + right) / 2
                 if abs(xi - xim1) < eps:  # warunek stopu
@@ -40,7 +44,7 @@ def bisection(left, right, eps, iteration, function_number):
 
 
 def newton(left, right, eps, iteration, function_number):
-    counter = 0
+    counter = 1
     if funtions_value(left, function_number) * funtions_value(right, function_number) > 0:
         return False
     x = sp.Symbol('x')
